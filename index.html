@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -9,98 +6,7 @@
     <title>Rangi za nyumba</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-       /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: rgb(12, 10, 10);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-image: url('nyumba.jfif'); /* Ensure this is a high-quality image */
-    background-size: cover; /* Ensures the image covers the entire body area */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Keeps the background fixed while scrolling */
-}
-
-/* Main Header */
-h1 {
-    color: white;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 15px;
-}
-
-/* Navigation Bar Styles */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-align: left;
-    margin: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Container for Main Content */
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    height: 80%;
-    margin-top: 100px; /* Push content down to avoid overlap with the navbar */
-    align-items: center;
-}
-
-/* Text Area Styling */
-.text-container {
-    width: 40%; /* Adjusted to make it more prominent */
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Adds shadow effect */
-}
-
-/* Heading within the Text Area */
-.text-container h2 {
-    font-size: 2.5rem; /* Increased the size for emphasis */
-    margin-bottom: 20px;
-}
-
-/* Paragraph Text Styling */
-.text-container p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px; /* Adds space between paragraphs */
-}
-
-/* Responsive Design (Mobile & Tablet) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .text-container {
-        width: 80%; /* Expand the text area on smaller screens */
-        padding: 20px;
-    }
-}
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -115,55 +21,95 @@ nav a:hover {
             background-attachment: fixed; /* Keeps the background fixed while scrolling */
         }
 
-        h1 {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 15px;
+        /* Main Header */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent dark background for header */
         }
 
+        h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
         nav {
             display: flex;
+            justify-content: center;
             gap: 15px;
+            padding: 10px 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background for navbar */
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            text-align: left;
-            margin: 20px;
+            margin: 5px 20px;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
+        /* Container for Main Content */
         .container {
             display: flex;
-            width: 90%;
-            height: 80%;
-            margin-top: 100px; /* Push content down to avoid overlap with the navbar */
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            margin-top: 50px; /* Push content down to avoid overlap with the navbar */
+            justify-content: center;
         }
 
+        /* Text Area Styling */
         .text-container {
-            width: 25%; /* Text area takes 1/4 of the page */
-            padding: 20px;
+            width: 35%; /* Adjusted to give more space for the text */
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
             color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Shadow for the text area */
+            margin-bottom: 20px;
         }
 
         .text-container h2 {
-            font-size: 2rem;
+            font-size: 2.5rem; /* Slightly larger heading */
             margin-bottom: 20px;
         }
 
         .text-container p {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design (Mobile & Tablet) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .text-container {
+                width: 80%; /* Expand text area for smaller screens */
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5rem; /* Adjust heading size for small screens */
+            }
+
+            nav a {
+                font-size: 1rem; /* Make navbar links smaller on mobile */
+            }
         }
     </style>
 </head>
@@ -188,7 +134,5 @@ nav a:hover {
             <p>Kwa maelezo zaidi na huduma, tafadhali wasiliana nasi kupitia sehemu ya "Wasiliana" hapa chini.</p>
         </div>
     </div>
-
-
 </body>
 </html>
