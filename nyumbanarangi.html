@@ -24,6 +24,44 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
             margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .prev:hover, .next:hover {
+            background: black;
         }
 
         .color-row {
@@ -101,7 +139,23 @@
 
     <div class="main-container">
         <h2>NYUMBA NA RANGI</h2>
-        
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="house1.jpg" alt="Nyumba na rangi ya manjano">
+            </div>
+            <div class="slide">
+                <img src="house2.jpg" alt="Nyumba na rangi ya bluu">
+            </div>
+            <div class="slide">
+                <img src="house3.jpg" alt="Nyumba na rangi ya kijivu">
+            </div>
+
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
         <div class='color-row' style='background: #f0e68c;'>
             <div class='left-section'>
                 <img src='house1.jpg' alt='Nyumba na rangi ya manjano'>
@@ -136,6 +190,32 @@
     <div class="back-button-container">
         <button class="back-button" onclick="window.history.back();">Back</button>
     </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Badili kila sekunde 3
+        }
+
+        function changeSlide(n) {
+            let slides = document.querySelectorAll(".slide");
+            slides[slideIndex - 1].style.display = "none";
+            slideIndex += n;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            if (slideIndex < 1) { slideIndex = slides.length; }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
 
 </body>
 </html>
