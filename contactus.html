@@ -83,57 +83,23 @@
             color: #666;
         }
 
-        /* Right section - Contact Form */
-        .contact-form {
+        /* Right section - Company Details */
+        .company-details {
             width: 50%;
             padding: 20px;
             background: #fff;
         }
 
-        .contact-form h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+        .company-details h3 {
             color: #333;
-            text-align: center;
-        }
-
-        .form-group {
+            font-size: 24px;
             margin-bottom: 15px;
-            text-align: left;
         }
 
-        .form-group label {
-            display: block;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .company-details p {
             font-size: 16px;
-        }
-
-        .form-group textarea {
-            height: 100px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background: #2980b9;
+            margin: 10px 0;
+            color: #555;
         }
 
         /* Back button at the bottom */
@@ -168,38 +134,74 @@
         <div class="companies">
             <h2>Makampuni ya Rangi Tanzania</h2>
             
-            <div class="company">
+            <div class="company" onclick="showDetails('dar-es-salaam-paints')">
                 <h3>Dar es Salaam Paints</h3>
                 <p>📞 0712 345 678</p>
             </div>
 
-            <div class="company">
+            <div class="company" onclick="showDetails('arusha-colors')">
                 <h3>Arusha Colors Ltd</h3>
                 <p>📞 0789 456 123</p>
             </div>
 
-            <div class="company">
+            <div class="company" onclick="showDetails('mwanza-paint-suppliers')">
                 <h3>Mwanza Paint Suppliers</h3>
                 <p>📞 0654 789 321</p>
             </div>
 
-            <div class="company">
+            <div class="company" onclick="showDetails('mbeya-best-paints')">
                 <h3>Mbeya Best Paints</h3>
                 <p>📞 0733 567 890</p>
             </div>
 
-            <div class="company">
+            <div class="company" onclick="showDetails('dodoma-color-hub')">
                 <h3>Dodoma Color Hub</h3>
                 <p>📞 0678 901 234</p>
             </div>
         </div>
 
-       
-           
+        <!-- Right: Company Details -->
+        <div class="company-details" id="company-details">
+            <h3>Maelezo ya Kampuni</h3>
+            <p>Bonyeza kampuni kutoka upande wa kushoto kuona maelezo zaidi.</p>
+        </div>
+    </div>
+
     <!-- Back Button -->
     <div class="back-button-container">
         <a href="home.php">Back</a>
     </div>
+
+    <script>
+        function showDetails(company) {
+            const details = {
+                "dar-es-salaam-paints": {
+                    name: "Dar es Salaam Paints",
+                    description: "Dar es Salaam Paints ni moja ya makampuni maarufu ya rangi nchini, wakitoa bidhaa za ubora wa juu kwa matumizi ya kibiashara na majumbani."
+                },
+                "arusha-colors": {
+                    name: "Arusha Colors Ltd",
+                    description: "Arusha Colors Ltd inajivunia kutoa rangi za kisasa na suluhisho bora la kupamba nyumba na ofisi."
+                },
+                "mwanza-paint-suppliers": {
+                    name: "Mwanza Paint Suppliers",
+                    description: "Mwanza Paint Suppliers inatoa huduma bora na bidhaa za rangi zinazohakikisha ubora na kudumu kwa muda mrefu."
+                },
+                "mbeya-best-paints": {
+                    name: "Mbeya Best Paints",
+                    description: "Mbeya Best Paints ni mtoa huduma maarufu wa rangi zinazoweza kutumika kwa aina mbalimbali za miradi."
+                },
+                "dodoma-color-hub": {
+                    name: "Dodoma Color Hub",
+                    description: "Dodoma Color Hub ina toa huduma bora kwa makampuni na wateja wa kibiashara na wanao hitaji rangi za ubora."
+                }
+            };
+
+            const companyDetail = details[company];
+            const detailSection = document.getElementById('company-details');
+            detailSection.innerHTML = `<h3>${companyDetail.name}</h3><p>${companyDetail.description}</p>`;
+        }
+    </script>
 
 </body>
 </html>
