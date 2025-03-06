@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -41,53 +40,22 @@
 
         /* Main container */
         .container {
-            display: flex;
-            width: 80%;
-            max-width: 1000px;
+            width: 50%;
+            max-width: 500px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-        }
-
-        /* Left section - Companies */
-        .companies {
-            width: 50%;
-            background: #f1f1f1;
             padding: 20px;
-        }
-
-        .companies h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: #333;
             text-align: center;
         }
 
-        .company {
-            background: white;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-left: 5px solid #3498db;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .company h3 {
-            margin: 0;
-            color: #444;
-        }
-
-        .company p {
-            margin: 5px 0 0;
-            color: #666;
-        }
-
-        /* Right section - Contact Form */
+        /* Contact Form */
         .contact-form {
-            width: 50%;
+            width: 100%;
             padding: 20px;
             background: #fff;
+            margin: auto;
         }
 
         .contact-form h2 {
@@ -99,6 +67,7 @@
 
         .form-group {
             margin-bottom: 15px;
+            text-align: left;
         }
 
         .form-group label {
@@ -141,7 +110,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #2ecc71; /* Green background */
+            background-color: #2ecc71;
             padding: 15px 30px;
             border-radius: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -150,7 +119,7 @@
         }
 
         .back-button-container:hover {
-            background-color: #27ae60; /* Darker green */
+            background-color: #27ae60;
         }
 
         .back-button-container a {
@@ -162,40 +131,26 @@
 </head>
 <body>
 
-
     <div class="container">
-        <!-- Left: Companies List -->
-        <div class="companies">
-            <h2>Makampuni ya Rangi Tanzania</h2>
-            
-            <div class="company">
-                <h3>Dar es Salaam Paints</h3>
-                <p>📞 0712 345 678</p>
-            </div>
-
-            <div class="company">
-                <h3>Arusha Colors Ltd</h3>
-                <p>📞 0789 456 123</p>
-            </div>
-
-            <div class="company">
-                <h3>Mwanza Paint Suppliers</h3>
-                <p>📞 0654 789 321</p>
-            </div>
-
-            <div class="company">
-                <h3>Mbeya Best Paints</h3>
-                <p>📞 0733 567 890</p>
-            </div>
-
-            <div class="company">
-                <h3>Dodoma Color Hub</h3>
-                <p>📞 0678 901 234</p>
-            </div>
-
-       
-
-       
+        <div class="contact-form">
+            <h2>Wasiliana Nasi</h2>
+            <form action="submit.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Jina:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Barua Pepe:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ujumbe:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Tuma Ujumbe</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Back Button -->
     <div class="back-button-container">
