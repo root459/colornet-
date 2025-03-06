@@ -13,16 +13,35 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background-image: url('nyumba.jfif');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding-top: 100px; /* Kusukuma content chini */
+            overflow: hidden; /* Ensure no scrollbars */
+        }
+
+        /* Slideshow as the background */
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Put the background behind content */
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            width: 300%; /* 100% per image, for 3 images */
+        }
+
+        .slides img {
+            width: 100%;  /* Each image takes the full container width */
+            object-fit: cover;
+            height: 100vh; /* Full height of the screen */
         }
 
         /* Main Header */
         header {
-            position: fixed; /* Header inabaki juu */
+            position: fixed;
             width: 100%;
             top: 0;
             left: 0;
@@ -33,12 +52,7 @@
             justify-content: space-between;
             padding: 10px 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Logo / Title */
-        .menu {
-            display: flex;
-            align-items: center;
+            z-index: 10; /* Keep header on top */
         }
 
         .menu h1 {
@@ -48,7 +62,6 @@
             padding-right: 20px;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             gap: 15px;
@@ -59,7 +72,6 @@
             text-decoration: none;
             font-size: 1.2rem;
             padding: 5px 15px;
-              margin: 20px;
         }
 
         nav a:hover {
@@ -73,6 +85,8 @@
             width: 100%;
             justify-content: center;
             margin-top: 20px;
+            z-index: 10; /* Keep text on top */
+            position: relative;
         }
 
         .text-container {
@@ -97,44 +111,9 @@
             line-height: 1.8;
         }
 
-        /* Slideshow Styles */
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 1s ease;
-        }
-
-        .slides img {
-            width: 100%;  /* Each image takes the full container width */
-            object-fit: cover;
-        }
-
+        /* Prev and Next Buttons (optional, but keep hidden for background slideshow) */
         .prev, .next {
-            position: absolute;
-            top: 50%;
-            padding: 16px;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 100;
-            transform: translateY(-50%);
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
+            display: none;
         }
 
         /* Responsive Design */
@@ -181,15 +160,13 @@
         </nav>
     </header>
 
-    <!-- Slideshow Section -->
+    <!-- Slideshow Section (Background) -->
     <div class="slideshow-container">
         <div class="slides">
             <img src="nyumba.jfif" alt="Rangi ya Nyumba 1">
             <img src="nyumba2.jfif" alt="Rangi ya Nyumba 2">
-           
+            <img src="nyumba3.jfif" alt="Rangi ya Nyumba 3">
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <!-- Main Content Area -->
@@ -218,7 +195,7 @@
             slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
         }
 
-        // Optional: Auto slide every 3 seconds
+        // Auto slide every 3 seconds
         setInterval(() => moveSlide(1), 3000);
     </script>
 
