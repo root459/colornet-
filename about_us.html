@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rangi za nyumba</title>
+    <title>House Colors</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* General styles */
@@ -15,32 +15,30 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background-image: url('nyumba.jfif');
+            background-image: url('house.jfif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
         }
 
-        /* Header with Navigation Bar */
+        /* Header */
         header {
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 5px;
+            padding: 10px;
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-left: 10px;
-            padding-right: 5px;
         }
 
         h1 {
             color: white;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             margin: 15px;
         }
@@ -54,38 +52,49 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            left: 10px;
-            right: 10px;
-            margin: 20px;
+            margin: 10px;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* Beauty Section with Background Color */
-        .beauty-section {
+        /* About Us Section */
+        .about-section {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 20px;
+            justify-content: space-around;
+            margin-top: 120px;
+            padding: 40px;
+        }
+
+        .about-box {
+            width: 45%;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-box h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
             text-align: center;
-            margin-top: 100px;
-            background-color: rgba(51, 38, 13, 0.7); /* Orange color with transparency */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
         }
 
-        .beauty-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .beauty-section p {
+        .about-box p, .about-box ul {
             font-size: 1.2rem;
-            max-width: 800px;
-            line-height: 1.8;
-            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .about-box ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .about-box ul li::before {
+            content: "✔ ";
+            color: #ffcc00;
         }
 
         /* Footer */
@@ -107,65 +116,75 @@
         }
 
         footer a:hover {
-            color: #ff6347;
+            color: #ffcc00;
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-box {
+                width: 90%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Navigation Bar -->
+    <!-- Header -->
     <header>
         <h1>COLORNET</h1>
         <nav>
             <a href="home.php">Home</a>
             <a href="about_us.php">About Us</a>
             <a href="user.php">House and Color</a>
-        
             <a href="contactus.php">Contact Us</a>
             <a href="blog.php">Blogs</a>
         </nav>
     </header>
 
-    <!-- Beauty Section -->
-    <section class="beauty-section" id="beauty">
-        <h2>Beauty in Every Color</h2>
-        <p>Color is not just a visual element, it's an experience that transforms the soul. Our goal is to bring out the beauty of your home through carefully chosen colors that enhance the aesthetics and bring positive energy to your space.</p>
-        <p>Whether you're painting a single wall or an entire building, we believe the right color can change everything. Explore our palette of colors and let us help you make your home a beautiful place.</p>
-        Kuhusu Sisi - COLORNET
-Karibu COLORNET, jukwaa bora la kuchagua rangi zinazofaa kwa nyumba na majengo! Tunajua kuwa rangi ni zaidi ya muonekano mzuri; ni njia ya kuonyesha mtindo wako, hisia zako, na hata kuongeza thamani ya mali yako. Ndiyo maana tumejizatiti kukupa mwongozo bora wa rangi ili kuhakikisha kuwa nyumba yako inang'ara kwa mvuto wa kipekee.
-Tunachofanya
-Katika COLORNET, tunatoa huduma mbalimbali zinazohusiana na rangi za nyumba, ikiwa ni pamoja na:
-<ul>
-    <li>Ushauri wa kitaalamu wa rangi – Tunakusaidia kuchagua rangi zinazofaa kulingana na mazingira, mwanga, na mtindo wa jengo lako.</li>
-<li> Mapendekezo ya mchanganyiko wa rangi – Tunaleta suluhisho bora za kuchanganya rangi ili kuleta mvuto wa kisasa na wa kuvutia.</li>
-<li>Huduma za uchoraji wa nyumba na majengo – Tunakupa mwongozo wa wapakaji rangi bora na vifaa vya kisasa vya uchoraji.</li>
-<li> Rangi rafiki kwa mazingira – Tunakushauri juu ya matumizi ya rangi salama kwa afya na rafiki kwa mazingira.</li>
-<li> Mitindo na mwelekeo wa kisasa wa rangi – Tunakupa taarifa za mitindo mipya ya rangi ili uende na wakati.</li>
-    </ul>
-<p>Dhamira Yetu</p>
-Lengo letu ni kusaidia wamiliki wa nyumba, wasanifu majengo, na wapangaji kupata mwelekeo sahihi wa rangi ili kuboresha muonekano wa makazi yao. Tunaamini kuwa rangi sahihi zinaweza kuleta hisia chanya, kupunguza msongo wa mawazo, na hata kuongeza thamani ya nyumba yako.
+    <!-- About Us Section -->
+    <section class="about-section">
+        <!-- Left About Box -->
+        <div class="about-box">
+            <h2>About COLORNET</h2>
+            <p><b>Welcome to COLORNET</b>, the ultimate platform for choosing the perfect colors for your house and buildings! We understand that colors are not just for aesthetics; they are a way to express style, emotions, and even enhance property value.</p>
+            <p>That’s why we are dedicated to providing expert color guidance to ensure your home shines with a unique and beautiful look.</p>
 
-Je, unatafuta rangi bora kwa nyumba yako? Unahitaji mwongozo wa kitaalamu wa kuchagua mchanganyiko sahihi wa rangi? COLORNET ipo kwa ajili yako!
-📞 Wasiliana Nasi kwa ushauri na huduma bora zaidi.
-🌐 Tembelea tovuti yetu kwa taarifa zaidi.
-Kwa Nini Utuchague?
-<ul>
-    <li> Tunatoa ushauri wa kitaalamu kutoka kwa wataalamu wa rangi na usanifu.</li>
-<li>Tunatumia mbinu za kisasa za kuchagua na kuchanganya rangi.</li>
-<li>Tunahakikisha rangi bora na zinazodumu kwa muda mrefu.</li>
-<li>Tunazingatia mazingira na afya yako, kwa kupendekeza rangi zisizo na madhara.</li>
-Ungana Nasi!
+            <h2>What We Do</h2>
+            <ul>
+                <li><b>Professional Color Consultation:</b> We help you choose the best colors based on environment, lighting, and architectural style.</li>
+                <li><b>Color Combination Recommendations:</b> We provide stunning color mixing solutions to enhance your home’s beauty.</li>
+                <li><b>House Painting Services:</b> We guide you on expert painters and modern painting tools.</li>
+                <li><b>Eco-Friendly Paints:</b> We advise on safe, environment-friendly paints for health-conscious homeowners.</li>
+                <li><b>Trendy Color Styles:</b> Stay updated with the latest color trends and styles.</li>
+            </ul>
+        </div>
 
+        <!-- Right About Box -->
+        <div class="about-box">
+            <h2>Our Mission</h2>
+            <p>Our goal is to help homeowners, architects, and designers find the perfect color direction to improve their spaces. We believe the right colors can boost positive energy, reduce stress, and increase property value.</p>
 
-    
-    
-    
-    
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li><b>Expert Advice:</b> We provide professional guidance from color experts and designers.</li>
+                <li><b>Modern Techniques:</b> We use advanced methods for selecting and blending colors.</li>
+                <li><b>Quality and Long-lasting Colors:</b> We ensure only the best and most durable colors are recommended.</li>
+                <li><b>Health & Environment Conscious:</b> We prioritize eco-friendly and non-toxic paint options.</li>
+            </ul>
+
+            <p><b>Looking for the perfect color for your home?</b> Need expert advice on color combinations? <b>COLORNET</b> is here for you!</p>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>developers links:</p>
+        <p>Developer Links:</p>
         <a href="https://www.paintcompany1.com">Paint Company 1</a>
         <a href="https://www.paintcompany2.com">Paint Company 2</a>
         <a href="https://www.paintcompany3.com">Paint Company 3</a>
