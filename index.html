@@ -6,7 +6,6 @@
     <title>Rangi za nyumba</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,108 +14,122 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background-image: url('nyumba.jfif'); /* Ensure this is a high-quality image */
-            background-size: cover; /* Ensures the image covers the entire body area */
-            background-position: center; /* Centers the image */
-            background-attachment: fixed; /* Keeps the background fixed while scrolling */
+            background-image: url('nyumba.jfif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding-top: 100px; /* Kusukuma content chini */
         }
 
         /* Main Header */
         header {
+            position: fixed; /* Header inabaki juu */
+            width: 100%;
+            top: 0;
+            left: 0;
             text-align: center;
-            padding: 20px 0;
-            background-color: rgba(0, 0, 0, 0.6); /* Transparent dark background for header */
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        h1 {
+        /* Logo / Title */
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu h1 {
             color: white;
-            font-size: 3rem;
-            font-weight: bold;
+            font-size: 2rem;
             margin: 0;
+            padding-right: 20px;
         }
 
-        /* Navigation Bar Styles */
+        /* Navigation */
         nav {
             display: flex;
-            justify-content: center;
             gap: 15px;
-            padding: 10px 0;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background for navbar */
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            margin: 5px 20px;
+            padding: 5px 15px;
         }
 
         nav a:hover {
             text-decoration: underline;
         }
 
-        /* Container for Main Content */
+        /* Main Content */
         .container {
             display: flex;
             flex-direction: row;
             width: 100%;
-            height: auto;
-            margin-top: 50px; /* Push content down to avoid overlap with the navbar */
             justify-content: center;
+            margin-top: 20px;
         }
 
-        /* Text Area Styling */
         .text-container {
-            width: 35%; /* Adjusted to give more space for the text */
+            width: 35%;
             padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.6);
             color: white;
             border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Shadow for the text area */
-            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
         }
 
         .text-container h2 {
-            font-size: 2.5rem; /* Slightly larger heading */
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
 
         .text-container p {
             font-size: 1.1rem;
             line-height: 1.8;
-            margin-bottom: 20px;
         }
 
-        /* Responsive Design (Mobile & Tablet) */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
-                justify-content: center;
-                padding: 20px;
+                align-items: center;
             }
 
             .text-container {
-                width: 80%; /* Expand text area for smaller screens */
-                padding: 20px;
+                width: 80%;
             }
 
-            h1 {
-                font-size: 2.5rem; /* Adjust heading size for small screens */
+            .menu h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
             }
 
             nav a {
-                font-size: 1rem; /* Make navbar links smaller on mobile */
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header with Navigation Bar -->
-    <header> 
-        <h1>COLORNET</h1>
+    <header>
+        <div class="menu">
+            <h1>COLORNET</h1>
+        </div>
         <nav>
             <a href="home.php">Home</a>
             <a href="about_us.php">About Us</a>
@@ -134,5 +147,6 @@
             <p>Kwa maelezo zaidi na huduma, tafadhali wasiliana nasi kupitia sehemu ya "Wasiliana" hapa chini.</p>
         </div>
     </div>
+
 </body>
 </html>
