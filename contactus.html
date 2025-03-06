@@ -40,22 +40,54 @@
 
         /* Main container */
         .container {
-            width: 50%;
-            max-width: 500px;
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             padding: 20px;
+        }
+
+        /* Left section - Companies */
+        .companies {
+            width: 50%;
+            background: #f1f1f1;
+            padding: 20px;
+        }
+
+        .companies h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
             text-align: center;
         }
 
-        /* Contact Form */
+        .company {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-left: 5px solid #3498db;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .company h3 {
+            margin: 0;
+            color: #444;
+        }
+
+        .company p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Right section - Contact Form */
         .contact-form {
-            width: 100%;
+            width: 50%;
             padding: 20px;
             background: #fff;
-            margin: auto;
         }
 
         .contact-form h2 {
@@ -132,6 +164,37 @@
 <body>
 
     <div class="container">
+        <!-- Left: Companies List -->
+        <div class="companies">
+            <h2>Makampuni ya Rangi Tanzania</h2>
+            
+            <div class="company">
+                <h3>Dar es Salaam Paints</h3>
+                <p>📞 0712 345 678</p>
+            </div>
+
+            <div class="company">
+                <h3>Arusha Colors Ltd</h3>
+                <p>📞 0789 456 123</p>
+            </div>
+
+            <div class="company">
+                <h3>Mwanza Paint Suppliers</h3>
+                <p>📞 0654 789 321</p>
+            </div>
+
+            <div class="company">
+                <h3>Mbeya Best Paints</h3>
+                <p>📞 0733 567 890</p>
+            </div>
+
+            <div class="company">
+                <h3>Dodoma Color Hub</h3>
+                <p>📞 0678 901 234</p>
+            </div>
+        </div>
+
+        <!-- Right: Contact Form -->
         <div class="contact-form">
             <h2>Wasiliana Nasi</h2>
             <form action="submit.php" method="POST">
