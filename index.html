@@ -112,7 +112,7 @@
         }
 
         .slides img {
-            width: 50%;  /* Picha mbili zitachukua 50% kila moja */
+            width: 100%;  /* Each image takes the full container width */
             object-fit: cover;
         }
 
@@ -210,12 +210,12 @@
             slideIndex += n;
 
             if (slideIndex < 0) {
-                slideIndex = totalSlides - 2;  // Kuonyesha picha mbili kwa wakati mmoja
-            } else if (slideIndex >= totalSlides - 1) {
-                slideIndex = 0;
+                slideIndex = totalSlides - 1;  // Show the last image if moving left from the first
+            } else if (slideIndex >= totalSlides) {
+                slideIndex = 0;  // Show the first image if moving right past the last
             }
 
-            slides.style.transform = 'translateX(' + (-slideIndex * 50) + '%)';
+            slides.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
         }
 
         // Optional: Auto slide every 3 seconds
