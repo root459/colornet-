@@ -1,57 +1,4 @@
-<?php
-// Database connection
-$host = "localhost";
-$user = "root"; // Modify if you have a password
-$password = "";
-$database = "nyumba"; // Replace with your database name
 
-$conn = new mysqli($host, $user, $password, $database);
-
-// Check for database connection error
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Initialize message array
-$message = [
-    'type' => '', // success or error
-    'text' => ''   // message content
-];
-
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $name = isset($_POST['name']) ? $_POST['name'] : '';
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $phone = isset($_POST['phone']) ? $_POST['phone'] : ''; // Retrieve phone number
-    $messageText = isset($_POST['message']) ? $_POST['message'] : '';
-
-    // Validate input
-    if (empty($name) || empty($email) || empty($messageText) || empty($phone)) {
-        $message = ['type' => 'error', 'text' => 'Tafadhali jaza fomu yote!'];
-    } else {
-        // Prepare the SQL query to insert data into the database
-        $sql = "INSERT INTO contact_form (name, email, phone, message) VALUES (?, ?, ?, ?)"; // Add phone to SQL
-        
-        // Prepare and bind the statement
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $name, $email, $phone, $messageText); // Bind phone number
-        
-        // Execute the query
-        if ($stmt->execute()) {
-            $message = ['type' => 'success', 'text' => 'Ujumbe wako umetumwa kwa mafanikio!'];
-        } else {
-            $message = ['type' => 'error', 'text' => 'Kosa limetokea: ' . $stmt->error];
-        }
-
-        // Close the statement
-        $stmt->close();
-    }
-}
-
-// Close the database connection
-$conn->close();
-?>
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -254,34 +201,7 @@ $conn->close();
 
         </div>
 
-        <!-- Right: Contact Form -->
-        <div class="contact-form">
-            <h2>Tuma Taarifa</h2>
-            <form action="contactus.php" method="POST">
-                <div class="form-group">
-                    <label for="name">Jina Lako:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Barua Pepe:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Namba ya Simu:</label>
-                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Namba ya simu ya 10" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Ujumbe Wako:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Tuma Ujumbe</button>
-            </form>
-        </div>
-    </div>
+       
 
     <!-- Back Button -->
     <div class="back-button-container">
