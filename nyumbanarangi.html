@@ -64,75 +64,6 @@
             background: black;
         }
 
-        .color-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            overflow: hidden;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            padding: 15px;
-        }
-
-        .left-section {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
-
-        .left-section img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 5px;
-            border: 2px solid #ddd;
-        }
-
-        .right-section {
-            width: 45%;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .color-title {
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .color-contact {
-            font-size: 16px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .back-button-container {
-            margin-top: 20px;
-        }
-
-        .back-button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .back-button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
@@ -155,47 +86,13 @@
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
             <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
-
-        <div class='color-row' style='background: #f0e68c;'>
-            <div class='left-section'>
-                <img src='house1.jpg' alt='Nyumba na rangi ya manjano'>
-            </div>
-            <div class='right-section'>
-                <p class='color-title'>Rangi: Manjano</p>
-                <p class='color-contact'>Wauzaji: Paint Shop Ltd</p>
-            </div>
-        </div>
-
-        <div class='color-row' style='background: #add8e6;'>
-            <div class='left-section'>
-                <img src='house2.jpg' alt='Nyumba na rangi ya bluu'>
-            </div>
-            <div class='right-section'>
-                <p class='color-title'>Rangi: Buluu</p>
-                <p class='color-contact'>Wauzaji: Color Masters</p>
-            </div>
-        </div>
-
-        <div class='color-row' style='background: #d3d3d3;'>
-            <div class='left-section'>
-                <img src='house3.jpg' alt='Nyumba na rangi ya kijivu'>
-            </div>
-            <div class='right-section'>
-                <p class='color-title'>Rangi: Kijivu</p>
-                <p class='color-contact'>Wauzaji: Premium Paints</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="back-button-container">
-        <button class="back-button" onclick="window.history.back();">Back</button>
     </div>
 
     <script>
         let slideIndex = 0;
+        let slides = document.querySelectorAll(".slide");
 
         function showSlides() {
-            let slides = document.querySelectorAll(".slide");
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -206,11 +103,12 @@
         }
 
         function changeSlide(n) {
-            let slides = document.querySelectorAll(".slide");
-            slides[slideIndex - 1].style.display = "none";
             slideIndex += n;
             if (slideIndex > slides.length) { slideIndex = 1; }
             if (slideIndex < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
             slides[slideIndex - 1].style.display = "block";
         }
 
