@@ -18,12 +18,11 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding-top: 100px; /* Kusukuma content chini */
+            padding-top: 100px;
         }
 
-        /* Main Header */
         header {
-            position: fixed; /* Header inabaki juu */
+            position: fixed;
             width: 100%;
             top: 0;
             left: 0;
@@ -36,7 +35,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        /* Logo / Title */
         .menu {
             display: flex;
             align-items: center;
@@ -46,28 +44,53 @@
             color: white;
             font-size: 2rem;
             margin: 0;
-            padding-right: 20px;
         }
 
-        /* Navigation */
-        nav {
+        .nav-links {
             display: flex;
             gap: 15px;
         }
 
-        nav a {
+        .nav-links a {
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
             padding: 5px 15px;
-              margin: 20px;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             text-decoration: underline;
         }
 
-        /* Main Content */
+        .toggle-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .toggle-menu {
+                display: block;
+            }
+        }
+
         .container {
             display: flex;
             flex-direction: row;
@@ -98,7 +121,6 @@
             line-height: 1.8;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -108,48 +130,34 @@
             .text-container {
                 width: 80%;
             }
-
-            .menu h1 {
-                font-size: 1.8rem;
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 1rem;
-                 gap: 15px;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header with Navigation Bar -->
     <header>
         <div class="menu">
             <h1>COLORNET</h1>
         </div>
-        <nav>
+        <div class="toggle-menu" onclick="toggleMenu()">&#9776;</div>
+        <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="about_us.html">About Us</a>
             <a href="nyumbanarangi.html">House and Color</a>
             <a href="contactus.html">Contact Us</a>
-       
         </nav>
     </header>
 
-    <!-- Main Content Area -->
     <div class="container">
         <div class="text-container">
             <h2>Karibu kwa Rangi ya Jengo Lako</h2>
-            <p>Chagua rangi inayofaa kwa nyumba yako kutoka kwa miongoni mwa aina mbalimbali. Rangi ni muhimu kwa kuboresha muonekano wa nyumba yako na pia kuongeza thamani yake. Tunatoa huduma za uchoraji wa jengo na ushauri kuhusu rangi bora.</p>
-            <p>Kwa maelezo zaidi na huduma, tafadhali wasiliana nasi kupitia sehemu ya "contactus" hapo juu. karibuni sana!</p>
+            <p>Chagua rangi inayofaa kwa nyumba yako kutoka kwa miongoni mwa aina mbalimbali...</p>
         </div>
     </div>
 
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
